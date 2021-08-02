@@ -169,8 +169,8 @@ class wrapper:
         inserts new object to the [details table]
         '''
         session = self._acquire_session()
-        new_tbl_entry = self.binaryaudit_abi_checker_transaction_details_tbl(
-                        BuildID=build_id,
+        new_tbl_entry = self.binaryaudit_abi_checker_transaction_details_tbl( 
+                        BuildID=build_id, 
                         ItemName=item_name,
                         BaseVersion=base_version,
                         NewVersion=new_version,
@@ -191,7 +191,7 @@ class wrapper:
         entry = session.query(self.binaryaudit_transaction_main_tbl).get(build_id)
         entry.Result = result
         self._flush_session(session)
-
+        
     def get_ba_latest_baseline(self, product_id):
         '''
         locates and returns the latest baseline object data

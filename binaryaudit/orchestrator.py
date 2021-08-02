@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from binaryaudit.db import wrapper as db_wrapper
+from binaryaudit.run import run_command
 
 
 class ba_orchestrator:
@@ -46,7 +47,7 @@ class ba_orchestrator:
         updates db to record the test result
         '''
         if self.db_conn.is_db_connected:
-            self.db_conn.insert_main_transaction(
+           self.db_conn.insert_main_transaction(
                     self.build_id,
                     self.product_id,
                     buildurl,
